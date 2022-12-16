@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Colors from '../../constant/colors';
 
 const styles = StyleSheet.create({
   button: {
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    backgroundColor: 'rgb(164,34,232)',
+    backgroundColor: Colors.buttoncolor,
     top: 20,
   },
   buttonText: {
