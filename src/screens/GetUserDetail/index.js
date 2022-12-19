@@ -1,12 +1,16 @@
 /* eslint-disable no-alert */
 import React, {useState} from 'react';
-import {Text, View, TextInput} from 'react-native';
+import {View} from 'react-native';
 import {useDispatch} from 'react-redux';
 
 import Button from '../../components/Button';
-import styles from './styles';
 import regex from '../../utils/regex';
 import {getEmail} from '../../redux/action/action';
+import Statusbar from '../../components/StatusBar';
+import styles from '../../components/Globalstyle/styles';
+import Textheader from '../../components/Textheader';
+import ImageIcon from '../../components/ImageIcon';
+import Textinput from '../../components/Textinput';
 
 const GetUserDetail = ({navigation}) => {
   const dispatch = useDispatch();
@@ -34,16 +38,17 @@ const GetUserDetail = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
-        <Text style={styles.textDesign}>
-          What is the email and phone{'\n'}number that we can reach{'\n'}you the
-          best?
-        </Text>
-        <View style={styles.inputTextTitle}>
-          <Text>Email Address</Text>
-        </View>
-        <TextInput
-          placeholder="dfshjfgs"
-          style={styles.textField}
+        <ImageIcon onPress={() => navigation.goBack()} />
+        <Statusbar />
+
+        <Textheader
+          text="What is the email and phone
+           number that we can reach               you the best?"
+        />
+
+        <Textinput
+          text={'Email Address'}
+          placeholder="Email"
           onChangeText={Name => setMail(Name)}
           defaultValue={mail}
           onBlur={() => {
@@ -51,26 +56,23 @@ const GetUserDetail = ({navigation}) => {
               regex.emailPattern.test(mail) === true ? '' : 'Incorrect email',
             );
           }}
+          warning={isValidemail}
         />
 
-        <Text style={styles.errorMsg}>{isValidemail}</Text>
-        <View style={styles.inputTextTitle}>
-          <Text>Phone</Text>
-        </View>
-        <TextInput
-          placeholder="dfshjfgs"
-          style={styles.textField}
+        <Textinput
+          text={'Phone'}
+          placeholder="Number"
           onChangeText={Name => setPhone(Name)}
           defaultValue={phone}
           onBlur={() => {
             setisPhoneValid(
               regex.passwordRule.test(phone) === true
                 ? ''
-                : 'Incorrect Mobilenumber',
+                : 'Incorrect MobileNumber',
             );
           }}
+          warning={isPhoneValid}
         />
-        <Text style={styles.errorMsg}>{isPhoneValid}</Text>
         <Button text={'next'} onPress={() => validate()} />
       </View>
     </View>

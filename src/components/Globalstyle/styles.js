@@ -10,11 +10,11 @@ const styles = StyleSheet.create({
     marginHorizontal: '10%',
   },
   textDesign: {
-    marginTop: '70%',
-    fontSize: 15,
-    fontWeight: '600',
+    marginTop: '40%',
+    fontSize: 20,
+    fontWeight: '400',
     color: 'rgb(36,38,39)',
-    textAlign: 'center',
+    textAlign: 'left',
   },
   textField: {
     paddingVertical: 15,
@@ -25,6 +25,18 @@ const styles = StyleSheet.create({
   },
   inputTextTitle: {
     top: 30,
+  },
+  cancelIcon: {
+    height: 15,
+    width: 15,
+    marginTop: 55,
+    left: '100%',
+    color: 'black',
+  },
+  backIcon: {
+    height: 15,
+    width: 15,
+    bottom: 21,
   },
   errorMsg: {
     color: 'red',
