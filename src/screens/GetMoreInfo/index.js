@@ -7,7 +7,6 @@ import Button from '../../components/Button';
 import {getJobTitle} from '../../redux/action/action';
 import StatusBar from '../../components/StatusBar';
 import styles from '../../components/Globalstyle/styles';
-import Textheader from '../../components/Textheader';
 import ImageIcon from '../../components/ImageIcon';
 import Textinput from '../../components/Textinput';
 import styless from './styless';
@@ -43,17 +42,19 @@ const GetMoreInfo = ({navigation}) => {
         <ImageIcon onPress={() => navigation.goBack()} />
         <StatusBar />
 
-        <Textheader
-          text={'Thanks! 😊 just a few more    details and we are done!'}
-        />
+        <Text style={styles.textDesign}>
+          Thanks! 😊 just a few more {'\n'} details and we are done!
+        </Text>
         <Textinput
-          text="Company Name"
+          mode="outlined"
+          label="Company Name"
           placeholder="companyName"
           onChangeText={Name => setcompanyName(Name)}
           defaultValue={companyName}
         />
         <Textinput
-          text="JobTitle"
+          mode="outlined"
+          label="Job Title"
           placeholder="jobTitle"
           onChangeText={Name => setjobtitle(Name)}
           defaultValue={jobtitle}

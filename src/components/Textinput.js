@@ -1,21 +1,32 @@
 import React from 'react';
-import {Text, View, TextInput} from 'react-native';
+import {Text, View} from 'react-native';
+import {TextInput} from 'react-native-paper';
 import styles from './Globalstyle/styles';
 
 const Textinput = Props => {
-  const {text, placeholder, onChangeText, defaultValue, onBlur, warning} =
-    Props;
+  const {
+    text,
+    placeholder,
+    onChangeText,
+    defaultValue,
+    onBlur,
+    warning,
+    label,
+    activeOutlineColor,
+  } = Props;
   return (
     <>
       <View style={styles.inputTextTitle}>
         <Text>{text}</Text>
       </View>
       <TextInput
+        mode="outlined"
+        label={label}
         placeholder={placeholder}
-        style={styles.textField}
         onChangeText={onChangeText}
         defaultValue={defaultValue}
         onBlur={onBlur}
+        activeOutlineColor={activeOutlineColor}
       />
       <Text style={styles.errorMsg}>{warning}</Text>
     </>

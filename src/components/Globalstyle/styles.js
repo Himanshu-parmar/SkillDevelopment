@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Fonts from '../../constant/Fonts';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,10 +12,11 @@ const styles = StyleSheet.create({
   },
   textDesign: {
     marginTop: '40%',
-    fontSize: 20,
+    fontSize: Fonts.fontSize_16,
     fontWeight: '400',
     color: 'rgb(36,38,39)',
     textAlign: 'left',
+    left: 10,
   },
   textField: {
     paddingVertical: 15,

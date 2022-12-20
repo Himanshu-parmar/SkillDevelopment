@@ -1,5 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
 const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 const styless = StyleSheet.create({
   container: {
     flex: 1,
@@ -7,17 +8,18 @@ const styless = StyleSheet.create({
     justifyContent: 'center',
   },
   modal: {
-    height: 500,
-    paddingTop: 30,
+    height: HEIGHT - 400,
+    paddingTop: '10%',
     backgroundColor: 'grey',
     borderRadius: 10,
     width: WIDTH - 60,
-    top: 100,
+    top: '10%',
   },
   close: {
     color: 'rgb(164,34,232)',
-    left: 100,
+    left: '30%',
     fontSize: 20,
+    top: '150%',
   },
   heading: {
     fontSize: 20,

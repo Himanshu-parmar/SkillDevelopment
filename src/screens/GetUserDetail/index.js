@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 
 import Button from '../../components/Button';
@@ -8,7 +8,6 @@ import regex from '../../utils/regex';
 import {getEmail} from '../../redux/action/action';
 import Statusbar from '../../components/StatusBar';
 import styles from '../../components/Globalstyle/styles';
-import Textheader from '../../components/Textheader';
 import ImageIcon from '../../components/ImageIcon';
 import Textinput from '../../components/Textinput';
 
@@ -41,14 +40,15 @@ const GetUserDetail = ({navigation}) => {
         <ImageIcon onPress={() => navigation.goBack()} />
         <Statusbar />
 
-        <Textheader
-          text="What is the email and phone
-           number that we can reach               you the best?"
-        />
-
+        <Text style={styles.textDesign}>
+          What is the email and phone{'\n'}
+          number that we can reach {'\n'}you the best?
+        </Text>
         <Textinput
-          text={'Email Address'}
+          mode="outlined"
+          label="Email Address"
           placeholder="Email"
+          activeOutlineColor="red"
           onChangeText={Name => setMail(Name)}
           defaultValue={mail}
           onBlur={() => {
@@ -60,8 +60,10 @@ const GetUserDetail = ({navigation}) => {
         />
 
         <Textinput
-          text={'Phone'}
+          mode="outlined"
+          label="Phone"
           placeholder="Number"
+          activeOutlineColor="red"
           onChangeText={Name => setPhone(Name)}
           defaultValue={phone}
           onBlur={() => {
@@ -73,6 +75,7 @@ const GetUserDetail = ({navigation}) => {
           }}
           warning={isPhoneValid}
         />
+
         <Button text={'next'} onPress={() => validate()} />
       </View>
     </View>
