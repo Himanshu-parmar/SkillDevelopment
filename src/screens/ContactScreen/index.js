@@ -5,13 +5,13 @@ import {useDispatch} from 'react-redux';
 
 import Button from '../../components/Button';
 import regex from '../../utils/regex';
-import {getEmail} from '../../redux/action/action';
+import {updateContact} from '../../redux/action/action';
 import Statusbar from '../../components/StatusBar';
-import styles from '../../components/Globalstyle/styles';
+import styles from '../../constant/Globalstyle/styles';
 import ImageIcon from '../../components/ImageIcon';
 import Textinput from '../../components/Textinput';
 
-const GetUserDetail = ({navigation}) => {
+const ContactScreen = ({navigation}) => {
   const dispatch = useDispatch();
   const [mail, setMail] = useState('');
   const [phone, setPhone] = useState('');
@@ -29,7 +29,7 @@ const GetUserDetail = ({navigation}) => {
       if (xyz.length !== maxLength.length) {
         alert('number is less than 10');
       } else {
-        dispatch(getEmail(object));
+        dispatch(updateContact(object));
         navigation.navigate('getinfo');
       }
     }
@@ -82,4 +82,4 @@ const GetUserDetail = ({navigation}) => {
   );
 };
 
-export default GetUserDetail;
+export default ContactScreen;

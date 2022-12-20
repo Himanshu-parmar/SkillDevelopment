@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, TouchableOpacity} from 'react-native';
-import styles from './Globalstyle/styles';
+import styles from '../constant/Globalstyle/styles';
 
 const ImageIcon = Props => {
   return (

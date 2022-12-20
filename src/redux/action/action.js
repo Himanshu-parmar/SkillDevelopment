@@ -1,26 +1,26 @@
 import {ActionTypes} from './actionType';
 
-export const getEmail = dataone => ({
-  type: ActionTypes.USERDATA,
-  payload: dataone,
+export const updateContact = data => ({
+  type: ActionTypes.CONTACTDATA,
+  payload: data,
 });
 
-export const getName = dataone => ({
-  type: ActionTypes.NAMEDETAIL,
-  payload: dataone,
+export const updatePersonalDetail = data => ({
+  type: ActionTypes.PERSONALDATA,
+  payload: data,
 });
 
-export const getJobTitle = dataone => ({
-  type: ActionTypes.JOBDETAIL,
-  payload: dataone,
+export const updateCompanyDetail = data => ({
+  type: ActionTypes.COMPANYDETAIL,
+  payload: data,
 });
 
-export const getDevelopment = dataone => ({
+export const updateCourseDev = data => ({
   type: ActionTypes.DEVELOPMENT,
-  payload: dataone,
+  payload: data,
 });
 
-export const getDepartment = dataone => ({
+export const updateDepartment = data => ({
   type: ActionTypes.DEPARTMENT,
-  payload: dataone,
+  payload: data,
 });

@@ -4,10 +4,10 @@ import {useDispatch} from 'react-redux';
 
 import Button from '../../components/Button';
 import Statusbar from '../../components/StatusBar';
-import {getDevelopment} from '../../redux/action/action';
-import styles from '../../components/Globalstyle/styles';
+import {updateCourseDev} from '../../redux/action/action';
+import styles from '../../constant/Globalstyle/styles';
 
-const HomeScreen = ({navigation}) => {
+const WelcomeScreen = ({navigation}) => {
   const dispatch = useDispatch();
 
   return (
@@ -25,21 +25,21 @@ const HomeScreen = ({navigation}) => {
         <Button
           text={'APP DEVELOPMENT'}
           onPress={() => {
-            dispatch(getDevelopment('App DEVELOPMENT'));
+            dispatch(updateCourseDev('App DEVELOPMENT'));
             navigation.navigate('department');
           }}
         />
         <Button
           text={'WEB DEVELOPMENT'}
           onPress={() => {
-            dispatch(getDevelopment('WEB DEVELOPMENT'));
+            dispatch(updateCourseDev('WEB DEVELOPMENT'));
             navigation.navigate('department');
           }}
         />
         <Button
           text={'BACKEND DEVELOPMENT'}
           onPress={() => {
-            dispatch(getDevelopment('BACKEND DEVELOPMENT'));
+            dispatch(updateCourseDev('BACKEND DEVELOPMENT'));
             navigation.navigate('department');
           }}
         />
@@ -48,4 +48,4 @@ const HomeScreen = ({navigation}) => {
   );
 };
 
-export default HomeScreen;
+export default WelcomeScreen;

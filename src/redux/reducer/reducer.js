@@ -1,11 +1,11 @@
 import {ActionTypes} from '../action/actionType';
 
 const initialState = {
-  userLoginData: {
+  contactDetail: {
     email: '',
     phonedetail: '',
   },
-  nameData: {
+  personalDetail: {
     firstName: ' ',
     lastName: '',
   },
@@ -23,19 +23,19 @@ const initialState = {
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionTypes.USERDATA:
+    case ActionTypes.CONTACTDATA:
       return {
         ...state,
 
-        userLoginData: action.payload,
+        contactDetail: action.payload,
       };
-    case ActionTypes.NAMEDETAIL:
+    case ActionTypes.PERSONALDATA:
       return {
         ...state,
 
-        nameData: action.payload,
+        personalDetail: action.payload,
       };
-    case ActionTypes.JOBDETAIL:
+    case ActionTypes.COMPANYDETAIL:
       return {
         ...state,
 

@@ -4,31 +4,31 @@ import {Text, View, Modal, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import Button from '../../components/Button';
-import {getJobTitle} from '../../redux/action/action';
+import {updateCompanyDetail} from '../../redux/action/action';
 import StatusBar from '../../components/StatusBar';
-import styles from '../../components/Globalstyle/styles';
+import styles from '../../constant/Globalstyle/styles';
 import ImageIcon from '../../components/ImageIcon';
 import Textinput from '../../components/Textinput';
 import styless from './styless';
 
-const GetMoreInfo = ({navigation}) => {
+const ThankyouScreen = ({navigation}) => {
   const dispatch = useDispatch();
-  const contactData = useSelector(state => state.counter.userLoginData);
-  const nameDetail = useSelector(state => state.counter.nameData);
-  const jobData = useSelector(state => state.counter.companyData);
-  const developData = useSelector(state => state.counter.developmentData);
-  const departData = useSelector(state => state.counter.departrmentData);
+  const contactDetail = useSelector(state => state.counter.contactDetail);
+  const personalDetail = useSelector(state => state.counter.personalDetail);
+  const companyData = useSelector(state => state.counter.companyData);
+  const developmentData = useSelector(state => state.counter.developmentData);
+  const departrmentData = useSelector(state => state.counter.departrmentData);
 
   const [openModal, setopenModal] = useState(false);
   const [companyName, setcompanyName] = useState('');
   const [jobtitle, setjobtitle] = useState('');
 
-  const jobDetail = () => {
+  const modalVisible = () => {
     const object = {companyName, jobtitle};
     if (companyName === '' && jobtitle === '') {
       alert('Fields cannot be Empty');
     } else {
-      dispatch(getJobTitle(object));
+      dispatch(updateCompanyDetail(object));
       setopenModal(true);
     }
   };
@@ -60,31 +60,31 @@ const GetMoreInfo = ({navigation}) => {
           defaultValue={jobtitle}
         />
 
-        <Button text={'REQUEST DEMO'} onPress={() => jobDetail()} />
+        <Button text={'REQUEST DEMO'} onPress={() => modalVisible()} />
         <Modal transparent={true} animationType="fade" visible={openModal}>
           <View style={styless.container}>
             <View style={styless.modal}>
               <Text style={styless.heading}>DATA</Text>
               <Text style={styless.storeData}>
-                Product :- {developData}
+                Product :- {developmentData}
                 {'\n'}
                 {'\n'}
-                Department :- {departData}
+                Department :- {departrmentData}
                 {'\n'}
                 {'\n'}
-                Email :- {contactData.mail}
+                Email :- {contactDetail.mail}
                 {'\n'}
                 {'\n'}
-                Phone :- {contactData.phone}
+                Phone :- {contactDetail.phone}
                 {'\n'}
                 {'\n'}
-                Name :- {nameDetail.Fname} {nameDetail.Lname}
+                Name :- {personalDetail.Fname} {personalDetail.Lname}
                 {'\n'}
                 {'\n'}
-                companyName :- {jobData.companyName}
+                companyName :- {companyData.companyName}
                 {'\n'}
                 {'\n'}
-                job Title :- {jobData.jobtitle}
+                job Title :- {companyData.jobtitle}
               </Text>
             </View>
 
@@ -98,4 +98,4 @@ const GetMoreInfo = ({navigation}) => {
   );
 };
 
-export default GetMoreInfo;
+export default ThankyouScreen;

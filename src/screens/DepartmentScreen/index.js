@@ -4,8 +4,8 @@ import {useDispatch} from 'react-redux';
 
 import Button from '../../components/Button';
 import StatusBar from '../../components/StatusBar';
-import {getDepartment} from '../../redux/action/action';
-import styles from '../../components/Globalstyle/styles';
+import {updateDepartment} from '../../redux/action/action';
+import styles from '../../constant/Globalstyle/styles';
 import ImageIcon from '../../components/ImageIcon';
 
 const DepartmentScreen = ({navigation}) => {
@@ -21,21 +21,21 @@ const DepartmentScreen = ({navigation}) => {
         <Button
           text={'Marketing'}
           onPress={() => {
-            dispatch(getDepartment('MARKETING'));
+            dispatch(updateDepartment('MARKETING'));
             navigation.navigate('userdetail');
           }}
         />
         <Button
           text={'Sales'}
           onPress={() => {
-            dispatch(getDepartment('SALES'));
+            dispatch(updateDepartment('SALES'));
             navigation.navigate('userdetail');
           }}
         />
         <Button
           text={'DEVELOPMENT'}
           onPress={() => {
-            dispatch(getDepartment('DEVELOPMENT'));
+            dispatch(updateDepartment('DEVELOPMENT'));
             navigation.navigate('userdetail');
           }}
         />

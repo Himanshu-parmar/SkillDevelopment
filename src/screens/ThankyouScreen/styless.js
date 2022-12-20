@@ -6,11 +6,12 @@ const styless = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#000000aa',
   },
   modal: {
     height: HEIGHT - 400,
     paddingTop: '10%',
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
     borderRadius: 10,
     width: WIDTH - 60,
     top: '10%',

@@ -4,23 +4,23 @@ import {View, Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 
 import Button from '../../components/Button';
-import {getName} from '../../redux/action/action';
+import {updatePersonalDetail} from '../../redux/action/action';
 import Statusbar from '../../components/StatusBar';
-import styles from '../../components/Globalstyle/styles';
+import styles from '../../constant/Globalstyle/styles';
 import ImageIcon from '../../components/ImageIcon';
 import Textinput from '../../components/Textinput';
 
-const GetInfo = ({navigation}) => {
+const PersonalDetail = ({navigation}) => {
   const dispatch = useDispatch();
   const [Fname, setFname] = useState('');
   const [Lname, setLname] = useState('');
 
-  const saveDetail = () => {
+  const savePDetail = () => {
     const object = {Fname, Lname};
     if (Fname === '' && Lname === '') {
       alert('Fields cannot be Empty');
     } else {
-      dispatch(getName(object));
+      dispatch(updatePersonalDetail(object));
       navigation.navigate('GetMoreInfo');
     }
   };
@@ -50,10 +50,10 @@ const GetInfo = ({navigation}) => {
           defaultValue={Lname}
         />
 
-        <Button text={'next'} onPress={() => saveDetail()} />
+        <Button text={'next'} onPress={() => savePDetail()} />
       </View>
     </View>
   );
 };
 
-export default GetInfo;
+export default PersonalDetail;

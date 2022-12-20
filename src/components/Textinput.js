@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import {TextInput} from 'react-native-paper';
-import styles from './Globalstyle/styles';
+import styles from './../constant/Globalstyle/styles';
 
 const Textinput = Props => {
   const {
